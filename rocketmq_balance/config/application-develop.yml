@@ -1,0 +1,40 @@
+server:
+  port: 9091
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3396/db_demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    #url: jdbc:mysql://rm-hp3b32jos339upm0xuo.mysql.huhehaote.rds.aliyuncs.com:3306/farm?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: ebp999
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    # properties:
+      # hibernate:
+        # show_sql: true  # 打印SQL语句
+        # format_sql: true  # 格式化SQL语句
+        # use_sql_comments: true  # 增加注释信息，就知道语句对应的Entity类型了
+        # generate_statistics: true # 统计信息，给出了每一步的耗时信息
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  thymeleaf:
+    cache: true
+    encoding: UTF-8
+    suffix: .html
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+# apache:
+#  rocketmq:
+#    nameServer: 192.168.43.163:9876;192.168.43.5:9876
+
+development: true

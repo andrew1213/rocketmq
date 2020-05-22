@@ -1,0 +1,65 @@
+#开发环境配置
+
+#Tomcat配置
+server:
+  port: 9189
+  servlet:
+    context-path: /plansolve
+    session:
+      cookie:
+        name: SESSIONID
+        max-age: 2592000
+  tomcat:
+    uri-encoding: UTF-8
+
+#数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-hp3b32jos339upm0xuo.mysql.huhehaote.rds.aliyuncs.com:3306/farm_test?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: yhyapp
+    password: YHY123qwe
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  thymeleaf:
+    cache: true
+    encoding: UTF-8
+    suffix: .html
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+# 缓存配置
+cache:
+  type: ehcache
+  ehcache:
+    config: classpath:ehcache.xml
+
+#项目访问地址
+projectURL: "http://statistics-test.plan-solve.com/plansolve"
+
+#文件保存地址
+file:
+  fileRealPath: "/home/testUploadFiles/"
+  fileUrlPath: "//statistics-test.plan-solve.com/plansolve/file/"
+
+#验证码服务
+message:
+  url: "http://service.winic.org/sys_port/gateway/index.asp"
+  id: "pulansuo"
+  pwd: "123qweQWE"
+
+#开发者模式
+development: true
